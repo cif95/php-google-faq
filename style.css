@@ -4,8 +4,12 @@
 	border: 0;
 }
 
+ul {
+	padding-left: 0;
+}
+
 .my-btn {
-	padding: 0 1.7rem;
+	padding: 0 1.5rem;
 	color: white;
 	border-radius: 5px;
 	font-weight: bold;
@@ -18,9 +22,64 @@ body {
 }
 
 header {
-	padding: 1rem;
-	height: 7vh;
+	padding: 1rem 0;
 	color: grey;
+}
+
+header,
+#lower-header ul li a {
+	color: #5F6368;
+}
+
+header div#upper-header {
 	display: flex;
+	padding-bottom: 1rem;
 	justify-content: space-between;
+}
+
+header div#upper-header div#logo img {
+	width: 75px;
+	vertical-align: middle;
+}
+
+header div#upper-header div#logo span {
+	font-size: 1.2rem;
+	vertical-align: middle;
+}
+
+header nav#lower-header {
+	border-bottom: 1px solid grey;
+}
+
+header nav#lower-header ul {
+	list-style-type: none;
+	display: flex;
+	gap: 2rem;
+	padding-bottom: 1rem;
+}
+
+header nav#lower-header ul li a {
+	text-decoration: none;
+}
+
+main section#faqs {
+	padding: 3rem 0;
+	color: #3C4043;
+	width: 50%;
+	line-height: 1.5rem;
+	margin: 0 auto;
+}
+
+main section#faqs h2,
+main section#faqs h4 {
+	padding: 1.5rem 0;
+}
+
+main section#faqs p {
+	font-size: 0.85rem;
+}
+
+#upper-header,
+#lower-header {
+	padding: 0 1rem;
 }

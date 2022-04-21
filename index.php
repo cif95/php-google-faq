@@ -1,4 +1,28 @@
-<?php 
+<?php
+
+$navLinks = array (
+	[
+		"text" => "Introduzione",
+		"href" => "#",
+	],
+	[
+		"text" => "Norme sulla privacy",
+		"href" => "#",
+	],
+	[
+		"text" => "Termini di servizio",
+		"href" => "#",
+	],
+	[
+		"text" => "Tecnologie",
+		"href" => "#",
+	],
+	[
+		"text" => "Domande frequenti",
+		"href" => "#",
+	],
+);
+
 $faqs = array(
 	[
 		"question" => "Come state implementando la recente decisione della Corte di giustizia dell'Unione europea (CGUE) relativa al diritto all'oblio?",
@@ -83,8 +107,22 @@ $faqs = array(
 </head>
 <body>
 	<header>
-		<h3>Google Privacy e termini</h3>
-		<button class="my-btn">Accedi</button>
+		<div id="upper-header">
+			<div id="logo">
+				<img src="./Google-Logo.png" alt="google logo">
+				<span>Privacy e termini</span>
+			</div>
+			<button class="my-btn">Accedi</button>
+		</div>
+		<nav id="lower-header">
+			<ul>
+				<?php
+					foreach( $navLinks as $link ) {
+						echo '<li> <a href="' .$link["href"]. '">' . $link['text'] .'</a></li>' ;
+					}
+				; ?>
+			</ul>
+		</nav>
 	</header>
 	<main>
 		<section id="faqs">
