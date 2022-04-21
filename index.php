@@ -27,23 +27,30 @@ $faqs = array(
 	],
 	[
 		"question" => "Perché il mio account è associato a un paese?",
-		"answer" => [
-									"mainAnswer" => "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:
-										La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. 
-										Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:
-										Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.
-										Google LLC, con sede negli Stati Uniti, per il resto del mondo.
-										La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.
-										Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account."
-									,
-									"secondaryTopic" => 	"Stabilire il paese associato al tuo account",
-									"secondaryAnswer" =>	"Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. 
-																				Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.
-																				I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l'associazione del paese.
-																				Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. 
-																				Contattaci se ritieni che il paese associato al tuo account sia sbagliato."
-									
-	]
+		"answer" =>  "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:
+										<ol>
+											<li>
+												La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. 
+												Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:
+												<ol type='a'>
+													<li>
+														Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.
+													</li>
+													<li>
+														Google LLC, con sede negli Stati Uniti, per il resto del mondo.
+													</li>
+												</ol>
+											</li>
+											<li>
+												La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.
+											</li>
+										</ol>
+										Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account.
+										Stabilire il paese associato al tuo account.
+										<h4>Stabilire il paese associato al tuo account</h4>
+										Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.
+										I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l'associazione del paese.
+										Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. Contattaci se ritieni che il paese associato al tuo account sia sbagliato."
 	],
 	[
 		"question" => "Come faccio a rimuovere informazioni su di me dai risultati di ricerca di Google?",
@@ -63,8 +70,7 @@ $faqs = array(
 								Inoltre, gli inserzionisti potrebbero ricevere informazioni relative all' esatte parole chiave che hanno determinato il clic su un annuncio."
 	],
 )
-
-; ?>
+;?>
 
 <!DOCTYPE html>
 <html lang="it">
@@ -72,35 +78,20 @@ $faqs = array(
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
 	<title>Google Faqs</title>
 </head>
 <body>
 	<header>
-		<h1>Google Privacy e termini</h1>
+		<h3>Google Privacy e termini</h3>
+		<button class="my-btn">Accedi</button>
 	</header>
 	<main>
 		<section id="faqs">
-			<?php  
-				foreach( $faqs as $faq ) {
-					if ( !is_array($faq['answer']) ) {
-						echo '<h2>' . $faq['question'] . '</h2>';
-						echo '<p>' . $faq['answer'] . '</p>';
-					} else {
-						echo '<h2>' . $faq['question'] . '</h2>';
-						foreach( $faq['answer'] as $key => $value ) {
-							switch ( $key ) {
-								case "mainAnswer" :
-									echo '<p>' . $value . '</p>';
-									break;
-								case "secondaryTopic" :
-									echo '<h4>' . $value . '</h4>';
-									break;
-								case "secondaryAnswer" :
-									echo '<p>' . $value . '</p>';
-									break;
-							}
-						}
-					}
+			<?php
+				foreach( $faqs as $faq) {
+					echo '<h2>' . $faq['question'] . '</h2>';
+					echo '<p>' . $faq['answer'] . '</p>';
 				}
 			; ?>
 		</section>
